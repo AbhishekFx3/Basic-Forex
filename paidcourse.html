@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>3D Circular Menu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000000;
+            overflow: auto;
+            perspective: 1000px;
+
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            z-index: -1;
+        }
+        .cube {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: float 10s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+        ul {
+            position: relative;
+            list-style: none;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+        }
+        ul li {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: #1C2833;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            transition: transform 0.5s, background 0.5s, box-shadow 0.5s;
+            transform-origin: 150px 150px;
+            box-shadow: 0 10px 20px rgba(46, 64, 83);
+            text-align: center;
+        }
+        ul li:hover {
+            background: #33a3ee;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.6);
+        }
+        ul li a {
+            text-decoration: none;
+            color: #05FAD5;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.5s;
+            font-size: 0.9em; /* Adjust font size to fit inside the box */
+        }
+        ul li:hover a {
+            color: #fff;
+        }
+        ul li:nth-child(1) { transform: rotateY(0deg) translateZ(200px); }
+        ul li:nth-child(2) { transform: rotateY(72deg) translateZ(200px); }
+        ul li:nth-child(3) { transform: rotateY(144deg) translateZ(200px); }
+        ul li:nth-child(4) { transform: rotateY(216deg) translateZ(200px); }
+        ul li:nth-child(5) { transform: rotateY(288deg) translateZ(200px); }
+        @keyframes rotate {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        /* Add animation */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+        .content {
+            margin-top: 20px;
+            padding: 0 20px;
+            text-align: left;
+            color: #fff;
+            font-size: 1.2em;
+            max-width: 900px;
+            transition: opacity 0.5s, transform 0.5s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hidden {
+            display: none;
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <!-- Create multiple cubes for background effect -->
+        <div class="cube" style="top: 20%; left: 20%; width: 50px; height: 50px; animation-duration: 12s;"></div>
+        <div class="cube" style="top: 40%; left: 60%; width: 30px; height: 30px; animation-duration: 10s;"></div>
+        <div class="cube" style="top: 80%; left: 30%; width: 70px; height: 70px; animation-duration: 14s;"></div>
+        <div class="cube" style="top: 50%; left: 80%; width: 20px; height: 20px; animation-duration: 16s;"></div>
+        <div class="cube" style="top: 70%; left: 40%; width: 40px; height: 40px; animation-duration: 18s;"></div>
+        <div class="cube" style="top: 90%; left: 10%; width: 60px; height: 60px; animation-duration: 20s;"></div>
+    </div>
+
+    <ul id="menu">
+        <li><a href="#" onclick="navigate(event, 'marketdirection')">MARKET DIRECTION</a></li>
+        <li><a href="#" onclick="navigate(event, 'htfbias')">HTF BIAS</a></li>
+        <li><a href="#" onclick="navigate(event, 'htfsetup')">HTF SETUP</a></li>
+        <li><a href="#" onclick="navigate(event, 'rsi-divergence')">RSI-DIVERGENCE</a></li>
+        <li><a href="#" onclick="navigate(event, '90-min-cycle')">90-MIN-CYCLE</a></li>
+    </ul>
+
+    <div class="content" id="marketdirection">
+    <p>Market Direction refers to the overall trend of the market, whether it is moving upward, downward, or sideways. Understanding market direction is crucial for traders to align their strategies with the prevailing trend.</p><br>
+    <p>For full course access, visit the <a href="https://discord.gg/4ZzzxdDTtP" target="_blank">Abhishek FX Team</a></p>
+    </div>
+
+    <div class="content hidden" id="htfbias">
+        <p>HTF Bias (Higher Time Frame Bias) helps traders to understand the dominant trend in higher time frames, which can provide a better context for making trading decisions in lower time frames.<br><br>
+
+        To look for trades::
+        1. Monthly Bias:::::weekly rejection +Transfer of order on weekly zone (Example:for sell ::: first buy and then sell candles formation & for buy ::: first sell and then buy candles formation)<br><br>
+
+        2. Weekly Bias:::::Daily rejection +Transfer of order on daily zone<br><br>
+
+        3. Daily Bias :::::Daily rejection +Transfer of order on 4hr zone(for sell : first buy and then sell candles formation)<br><br>
+
+        4. Daily is the lowest time frame we go for storyline and H4  &  H1 is the lowest we go for entry<br><br>
+
+        5. Left Shoulder and Apex are the main two areas to trade<br><br>
+
+        6. Open close candles (OCC) are also valid for trade and it is more powerful when aligned with the engulfing candle<br><br>
+
+        7. Always look for fresh scenario to trade<br><br>
+
+        <img height="500px" width="850px" src="XAUUSD1.png">
+
+        <img height="500px" width="850px" src="https://cdn.discordapp.com/attachments/1130046806550655026/1130114817907240980/XAUUSD_2023-07-16_18-10-45.png?ex=6674ca31&is=667378b1&hm=e8132ba1d4bc6b1c11914afdf27cdf524a6023eb56f7dc8761a9fa99c4c09de7&">
+
+        Note: First candle rejection is called Left Shoulder and Candle top is denoted by Apex.We can take after these area was mitigated.If these all requirements filled up then we look for sessions liquidity and lower time frame confirmation.<br><br> 
+
+        <p>For full course access, visit the <a href="https://discord.gg/4ZzzxdDTtP" target="_blank">Abhishek FX Team</a></p>
+
+    </div>
+    <div class="content hidden" id="htfsetup">
+        <p>HTF Setup involves identifying trade setups based on higher time frame analysis. It helps traders to find high-probability trades that align with the broader market trend.</p><br> 
+        <p>For full course access, visit the <a href="https://discord.gg/4ZzzxdDTtP" target="_blank">Abhishek FX Team</a></p>
+    </div>
+    <div class="content hidden" id="rsi-divergence">
+        <p>RSI-Divergence is a trading strategy that uses the Relative Strength Index (RSI) to identify potential reversals in the market. Divergence occurs when the price moves in the opposite direction of the RSI, indicating a possible change in trend.</p><br> 
+        <p>For full course access, visit the <a href="https://discord.gg/4ZzzxdDTtP" target="_blank">Abhishek FX Team</a></p>
+    </div>
+    <div class="content hidden" id="90-min-cycle">
+        <p>The 90-Min Cycle is a trading strategy that involves monitoring market movements in 90-minute intervals. This cycle can help traders identify short-term trends and make more timely trading decisions.</p><br> 
+        <p>For full course access, visit the <a href="https://discord.gg/4ZzzxdDTtP" target="_blank">Abhishek FX Team</a></p>
+    </div>
+
+    <script>
+        function navigate(event, sectionId) {
+            event.preventDefault();
+            const menu = document.getElementById('menu');
+            const sections = document.querySelectorAll('.content');
+            menu.classList.add('fade-out');
+            setTimeout(() => {
+                menu.classList.remove('fade-out');
+                sections.forEach(section => {
+                    if (section.id === sectionId) {
+                        section.classList.add('active');
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.remove('active');
+                        section.classList.add('hidden');
+                    }
+                });
+            }, 500); // Match the duration of the fadeOut animation
+        }
+    </script>
+</body>
+</html>

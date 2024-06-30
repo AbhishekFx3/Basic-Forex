@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Forex Trading Services</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #005f73;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section#services {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Service Items */
+        .service-item {
+            background: #fff;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item h3 {
+            margin-top: 0;
+            transition: color 0.3s;
+        }
+
+        .service-item p {
+            display: none; /* Initially hide descriptions */
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #005f73;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .service-item {
+                padding: 15px;
+            }
+        }
+
+        /* Add space between the last service item and the footer */
+        .last-service-item {
+            margin-bottom: 80px; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Forex Trading Services</h1>
+    </header>
+    <section id="services">
+        <h2>Explore My Services</h2>
+        <div class="service-item">
+            <h3>Market Analysis</h3>
+            <p>I provide in-depth market analysis, including technical and fundamental analysis, to help you make informed trading decisions.</p>
+        </div>
+        <div class="service-item">
+            <h3>Trade Execution</h3>
+            <p>My platform ensures fast and reliable trade execution with minimal slippage, providing you with the best possible trading experience.</p>
+        </div>
+        <div class="service-item">
+            <h3>Risk Management</h3>
+            <p>I offer comprehensive risk management tools, including stop-loss orders, to protect your investments and manage your trading risks effectively.</p>
+        </div>
+        <div class="service-item">
+            <h3>Educational Resources</h3>
+            <p>Access a wealth of educational resources, including webinars, tutorials, and articles, to enhance your trading knowledge and skills.</p>
+        </div>
+        <div class="service-item last-service-item">
+            <h3>Customer Support</h3>
+            <p>I am available 24/7 to assist you with any questions or issues you may have.</p>
+        </div>
+    </section>
+    <footer>
+        <p>© Abhishek Fx | 2024 | All Right Reserved.</p>
+    </footer>
+    <script>
+        // JavaScript for toggling service descriptions
+        document.querySelectorAll('.service-item').forEach(item => {
+            item.addEventListener('click', event => {
+                const description = event.currentTarget.querySelector('p');
+                description.style.display = description.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Trading FAQ</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #005f73;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section#faq {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ Items */
+        .faq-item {
+            background: #fff;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            transition: color 0.3s;
+        }
+
+        .faq-item p {
+            display: none; /* Initially hide answers */
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #005f73;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .faq-item {
+                padding: 15px;
+            }
+        }
+
+        /* Add space between the last FAQ item and the footer */
+        .last-faq-item {
+            margin-bottom: 80px; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forex Trading FAQ</h1>
+    </header>
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What is Forex trading?</h3>
+            <p>Forex trading involves buying and selling currencies on the foreign exchange market to profit from fluctuations in exchange rates.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How does Forex trading work?</h3>
+            <p>Forex trading works by exchanging one currency for another at current exchange rates. Traders speculate on the direction in which currency prices will move to make profits.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is a currency pair?</h3>
+            <p>A currency pair is a quotation of two different currencies, with the value of one currency being quoted against the other. Examples include EUR/USD and GBP/JPY.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is leverage in Forex trading?</h3>
+            <p>Leverage allows traders to control larger positions with a smaller amount of capital. It magnifies both potential gains and potential losses.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the risks involved in Forex trading?</h3>
+            <p>Risks include market volatility, leverage risk, counterparty risk, and geopolitical events. Proper risk management strategies are essential.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do I start trading Forex?</h3>
+            <p>To start, choose a reputable broker, open a trading account, deposit funds, and begin trading. Education on market analysis and trading strategies is crucial.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is a Forex broker?</h3>
+            <p>A Forex broker is a company that provides access to a trading platform for buying and selling currencies. They charge fees or spreads for their services.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is a pip in Forex trading?</h3>
+            <p>A pip (percentage in point) is the smallest price movement in a currency pair's exchange rate. It is typically the fourth decimal place in most currency pairs.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I make money with Forex trading?</h3>
+            <p>Yes, it is possible to make money with Forex trading, but it requires knowledge, experience, and a disciplined approach. Many traders also incur losses.</p>
+        </div>
+        <div class="faq-item last-faq-item">
+            <h3>What is the best time to trade Forex?</h3>
+            <p>The best time to trade depends on the currency pairs being traded. The most active trading times are during the overlapping hours of major market sessions, such as the London and New York sessions.</p>
+        </div>
+    </section>
+    <footer>
+        <p>© Abhishek Fx | 2024 | All Right Reserved.</p>
+    </footer>
+    <script>
+        // JavaScript for toggling FAQ answers
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = event.currentTarget.querySelector('p');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
